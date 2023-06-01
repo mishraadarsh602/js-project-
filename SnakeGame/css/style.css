@@ -82,8 +82,11 @@ body{
     /* content:""; */
 
 }
+.message{
+    display: none;
+   }
 @media (max-width:575px) {
-   #board{ position: relative;
-    left: 8%;
-}
+   .message{
+    display: block;
+   }
 }
