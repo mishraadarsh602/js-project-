@@ -7,7 +7,7 @@ const hiss = new Audio('music/hiss.mp3');
 const gameOverSound = new Audio('music/gameover.mp3');
 const moveSound = new Audio('music/move.mp3');
 //const musicSound = new Audio('music/music.mp3');
-const musicSound = new Audio('music/music2j.mp3');
+const musicSound = new Audio('music/music2.mp3');
 
 let speed = 4;
 
