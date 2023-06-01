@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+        <style>
+
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+        
+            body{
+                background:url("bg.jpg");
+                background-position: center;
+                background-size: cover;
+                font-family: 'Merriweather Sans', sans-serif;
+                background-repeat: no-repeat;
+            }
+            nav{
+                background-color:transparent!important;
+    border: none!important;
+            }
+            .card{
+                font-size: 18px;
+    background:#e8e8e84f;
+            }
+            .card .card-header{
+               background-color: #2969c6!important;
+            }
+            #message{
+                display:none;
+            }
+            #message h1{
+                background: white;
+    padding: 10px;
+    text-align: center;
+    color: #005aff;
+  
+            }
+            .table th, .table td{
+                background: #7e520b5e;
+    color: #fff;
+    font-weight: bolder;
+            }
+            .heads{
+                color:#fbfbfb;
+                text-shadow:4px 4px blue;
+            }
+            @media (max-width:575px) {
+                .box{
+                 
+                    justify-content:center!important;
+                    
+                }
+            }
+        </style>
+</head>
+
+<body>
+
+    <nav class="navbar  py-3 px-4" >
+
+        <div class="container-fluid box">
+            <a class="navbar-brand text-light"><img src="logo.png" class="img-fluid" alt=""></a>
+            <form class="d-flex" role="search">
+                <input class="form-control rounded-0" type="search"  id="cityBox" placeholder="Search City" aria-label="Search">
+                <button class="btn btn-primary rounded-0" id="searchbtn"  type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <br><br>
+ 
+    <section class="container mt-5" id="container">
+        <main>
+            <h1 class="m-4 fw-normal fw-bold text-center heads">Weather for <span id="cityName"></span></h1>
+            <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal ">Temperature</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="temp2"></span> <small
+                                    class="text-body-secondary fw-light">&#8451;</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <!-- <li>Temperature is <span id="temp"></span></li> -->
+                                <li>Min Temperature is <span id="min_temp"></span></li>
+                                <li>Max Temperature is <span id="max_temp"></span></li>
+                              
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Humidity</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="humidity2"></span><small
+                                    class="text-body-secondary fw-light">%</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Humidity is <span id="humidity"></span></li>
+                                <li>Feels Like <span id="feels_like"></span></li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                        <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Wind Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><span id="wind_speed2"></span><small
+                                    class="text-body-secondary fw-light">/hour</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>Wind Speed <span id="wind_speed"></span></li>
+                                <li>Wind Degree <span id="wind_degrees"></span></li>
+                               
+                            </ul>
+                            <!-- <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="display-6 text-center mb-4 fw-bold heads mt-5">Weather for Other Cities </h2>
+
+            <div class="table-responsive">
+                <table class="table text-center">
+                    <thead>
+                      <tr>
+                        <th scope="col">City</th>
+                        <th scope="col">Temperature</th>
+                        <th scope="col">Humidity</th>
+                        <th scope="col">Wind Speed</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row"><span id="othercity1"></span></th>
+                        <td><span id="othertemp1"></span>&#8451;</td>
+                        <td><span id="otherhumid1"></span>%</td>
+                        <td><span id="otherwind1"></span>/hour</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><span id="othercity2"></span></th>
+                        <td><span id="othertemp2"></span>&#8451;</td>
+                        <td><span id="otherhumid2"></span>%</td>
+                        <td><span id="otherwind2"></span>/hour</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><span id="othercity3"></span></th>
+                        <td><span id="othertemp3"></span>&#8451;</td>
+                        <td><span id="otherhumid3"></span>%</td>
+                        <td><span id="otherwind3"></span>/hour</td>
+                      </tr>
+                      <tr>
+                        <th scope="row"><span id="othercity4"></span></th>
+                        <td><span id="othertemp4"></span>&#8451;</td>
+                        <td><span id="otherhumid4"></span>%</td>
+                        <td><span id="otherwind4"></span>/hour</td>
+                      </tr>
+                     
+                    </tbody>
+                  </table>
+            </div>
+        </main>
+    </section>
+  <br><br><br>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

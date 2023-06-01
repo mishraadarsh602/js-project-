@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Guess the number - using JavaScript  </title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+<div id="loader">
+   <div class="loader-box d-flex justify-content-center align-items-center flex-column" >
+      <img class="img-fluid w-25" src="loader.png" alt="">
+      <img class="img-fluid w-25" src="loadinggif.gif" alt="">
+  
+
+
+   </div>
+</div>
+  <div class="section">
+    <div class="container">
+      <div class="inner inner p-5 rounded-2 bg-light">
+        <div class="text-center">
+          <h1 class="think fw-bold animate__animated animate__fadeInRight">I am Thinking of a number between 1-100</h1>
+          <h2 class=" animate__animated animate__fadeInBottomLeft guessit">Can you guess it ?</h2>
+        </div>
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <div class="mt-4 ">
+              <div class="form text-center">
+                <label for="guessField"></label>
+                <input type="text" id="guessField" class="guessField">
+                <h3 class="lastResult"></h3>
+                 <div> <input type="submit" value="Guess" class="btn guessSubmit show fs-5 px-4 mt-4"></div>
+                <div class="text-center mt-4" id="play-again"></div>
+              </div>
+
+              <div class="resultParas text-center lead">
+                <h4 class="guesses-div">Guesses : <span class="guesses"></span></h4>
+               
+                <h3 class="lowOrHi text-primary"></h3>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12 ">
+            <!-- <h1 class="text-muted text-capitalize">
+              <span class="text-primary">JavaScript</span> Number guessing game
+            </h1>
+    
+            <p class="lead">Simply enter a number between 1 - 100 then click the button</p> -->
+            <p class="text-primary"><span class="chances-div p-3">Chances left: <input type="text" disabled
+                  class="chances"></span></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- partial -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+    integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+    integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  
+</body>
+
+</html>

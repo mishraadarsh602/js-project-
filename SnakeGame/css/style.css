@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: url("../img/bg2.jpg"); 
+    min-height: 100vh; 
+     background-size: 100vw 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+   overflow: hidden;
+   
+  
+}
+#board{
+    background: linear-gradient(rgb(170, 236, 170), rgb(236, 236, 167));
+    width: 90vmin;
+    height: 92vmin;
+    border: 2px solid #a8c818;
+    display: grid;
+    grid-template-rows: repeat(18, 1fr);
+    grid-template-columns: repeat(18, 1fr);
+    background: url("https://img.freepik.com/free-vector/seamless-textured-grass-natural-grass-pattern_172107-1308.jpg?w=360");
+
+}
+
+#hiscoreBox,.title,#scoreBox{
+   
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+    color: #fff;
+}
+.title{
+    left:50px;
+}
+.title img{
+    max-width:222px;
+}
+.title p{
+    font-size: 18px;
+}
+.title .box-b{
+   margin-top:20%;
+
+
+}
+
+.head{
+    /* background-color: red; */
+    background:linear-gradient(rgb(244 135 10), rgb(228, 228, 129));
+    /* border: 2px solid rgb(34, 4, 34);  */
+    transform: scale(1.02);
+    border-radius: 9px;
+}
+
+.snake{
+    /* background-color: purple; */
+    /* border: .25vmin solid white; */
+    /* border-radius: 12px; */
+    background: linear-gradient(rgb(16 244 10), rgb(64 130 37));
+
+    /* background-color:rgb(218 130 33); */
+}
+
+
+.food{
+    /* background-color: yellow; */
+    /* background: linear-gradient(red, purple);  */
+    /* border: .25vmin solid black;
+    border-radius: 50%; */
+
+}
+.food::before{
+   content:url("../img/frog2.png");
+    width:20px;
+    height:20px;
+    position: absolute;
+    /* content:""; */
+
+}
+@media (max-width:575px) {
+   #board{ position: relative;
+    left: 8%;
+}
+}
