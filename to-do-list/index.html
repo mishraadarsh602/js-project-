@@ -207,6 +207,11 @@
                     }
 
                 }, false);
+                saveTask();
+                function saveTask() {
+                    localStorage.setItem("data", ul.innerHTML);
+
+                }
 
        // });
     </script>
